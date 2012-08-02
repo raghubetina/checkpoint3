@@ -1,0 +1,11 @@
+<h1><%= link_to (image_tag 'logo.png'), root_url %></h1>
+
+<ul>
+<% @posts_with_videos.each do |post| %>
+  <li><%= post["from"]["name"] %></li>
+  <ul>
+    <li><%= post["message"] %></li>
+    <li><%= time_ago_in_words post["created_time"] %> ago</li>
+  </ul>
+<% end %>
+</ul>
